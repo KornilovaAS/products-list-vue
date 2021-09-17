@@ -24,7 +24,7 @@ export default {
 .wrapper {
   padding-top: 30px;
   display: grid;
-  grid-template-columns: auto 332px minmax(320px, 1440px) auto;
+  grid-template-columns: auto 332px minmax(320px, 1350px) auto;
   grid-template-rows: auto;
 
   min-height: 100vh;
