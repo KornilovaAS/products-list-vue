@@ -1,10 +1,28 @@
 <template>
-  <button :class="[$style.btn, $style.default, { [$style.succes]: isSucces }]">
+  <button
+    :class="[
+      $style.btn,
+      $style.default,
+      { [$style.succes]: isSucces },
+      { [$style.ghost]: isGhost },
+    ]"
+  >
     {{ title }}
+    <IconBase
+      v-if="isGhost"
+      width="8"
+      height="6"
+      icon-name="arrow"
+      :class="$style.svgArrow"
+    >
+      <IconArrow />
+    </IconBase>
   </button>
 </template>
 
 <script>
+import IconArrow from './icons/IconArrow';
+import IconBase from './IconBase';
 export default {
   name: 'Button',
   props: {
@@ -16,8 +34,16 @@ export default {
       type: Boolean,
       default: false,
     },
+    isGhost: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({}),
+  components: {
+    IconArrow,
+    IconBase,
+  },
 };
 </script>
 
@@ -37,6 +63,9 @@ export default {
   width: 100%;
   padding: 10px;
   cursor: pointer;
+  .svgArrow {
+    margin-bottom: 0.5px;
+  }
 }
 .default {
   color: $color-fontInput;
@@ -47,5 +76,10 @@ export default {
   color: $color-white;
   background: $color-buttonSucces;
   letter-spacing: 0;
+}
+.ghost {
+  color: $color-fontInput;
+  background: #fffefb;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 </style>

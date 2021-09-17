@@ -1,5 +1,9 @@
 <template>
   <div :class="$style.wrapper">
+    <h1 :class="$style.title">Добавление товара</h1>
+    <div :class="$style.sortButton">
+      <Button title="По умолчанию" isGhost />
+    </div>
     <Sidebar :class="$style.sidebar" />
     <TopPageComponent :class="$style.topPageComponent" />
   </div>
@@ -8,12 +12,14 @@
 <script>
 import Sidebar from './components/Sidebar';
 import TopPageComponent from './components/TopPageComponent';
+import Button from './components/Button';
 
 export default {
   name: 'App',
   components: {
     Sidebar,
     TopPageComponent,
+    Button,
   },
 };
 </script>
@@ -22,18 +28,28 @@ export default {
 @import 'styles/typography.scss';
 @import 'styles/global';
 .wrapper {
-  padding-top: 30px;
   display: grid;
-  grid-template-columns: auto 332px minmax(320px, 1350px) auto;
-  grid-template-rows: auto;
-
+  grid-template-columns: auto 332px minmax(320px, 1044px) auto;
+  grid-template-rows: 83px auto;
   min-height: 100vh;
-  grid-template-areas: '. sidebar topPageComponent .';
+  grid-template-areas: '. title sort .' '. sidebar topPageComponent .';
   .sidebar {
     grid-area: sidebar;
   }
   .topPageComponent {
     grid-area: topPageComponent;
+  }
+  .title {
+    grid-area: title;
+    justify-self: left;
+    align-self: end;
+    margin-bottom: 16px;
+  }
+  .sortButton {
+    grid-area: sort;
+    justify-self: right;
+    align-self: end;
+    margin-bottom: 16px;
   }
 }
 </style>

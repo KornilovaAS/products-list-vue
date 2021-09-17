@@ -1,22 +1,15 @@
 <template>
   <div :class="$style.formWrapper">
-    <h1>Sidebar</h1>
-    <Button title="Добавить товар" isSucces />
-    <Label id="productName" description="Наименование товара" isRequired />
-    <Input placeholderTitle="Введите наименование товара" id="productName" />
+    <AddProductForm />
   </div>
 </template>
 
 <script>
-import Button from './Button';
-import Input from './Input';
-import Label from './Label';
+import AddProductForm from './AddProductForm';
 export default {
   name: 'Sidebar',
   components: {
-    Button,
-    Input,
-    Label,
+    AddProductForm,
   },
 };
 </script>
