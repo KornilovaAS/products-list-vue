@@ -52,4 +52,18 @@ export default {
     margin-bottom: 16px;
   }
 }
+@media (max-width: 685px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4 auto);
+    grid-template-areas: 'title' 'sidebar' 'sort' 'topPageComponent';
+  }
+  .sortButton {
+    margin-top: 16px;
+    padding-right: 16px;
+  }
+  .title {
+    padding-left: 16px;
+  }
+}
 </style>

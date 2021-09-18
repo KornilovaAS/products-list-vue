@@ -46,6 +46,7 @@ export default {
   grid-template-rows: repeat(4 auto);
   grid-template-areas: 'img' 'title' 'descriptions' 'price';
   gap: 16px;
+  cursor: pointer;
   .imgCard {
     grid-area: img;
   }
