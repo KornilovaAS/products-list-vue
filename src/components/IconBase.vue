@@ -8,7 +8,7 @@
     role="presentation"
   >
     <title :id="iconName" lang="en">{{ iconName }} icon</title>
-    <g :fill="iconColor" :clip-path="clipPath">
+    <g :fill="iconColor">
       <slot />
     </g>
   </svg>
@@ -31,14 +31,11 @@ export default {
     },
     iconColor: {
       type: String,
-      default: 'none',
+      default: 'currentColor',
     },
     viewBox: {
-      type: String,
-      default: '0 0 8 6',
-    },
-    clipPath: {
-      type: String,
+      type: [Number, String],
+      default: '0 0 18 18',
     },
   },
 };

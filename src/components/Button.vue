@@ -13,6 +13,8 @@
       width="8"
       height="6"
       icon-name="arrow"
+      viewBox="0 0 8 6"
+      iconColor="none"
       :class="$style.svgArrow"
     >
       <IconArrow />
@@ -63,14 +65,22 @@ export default {
   width: 100%;
   padding: 10px;
   cursor: pointer;
+  transition: 0.3s;
   .svgArrow {
     margin-bottom: 0.5px;
+  }
+  &:hover {
+    transform: scale(0.97);
   }
 }
 .default {
   color: $color-fontInput;
   background: $color-buttonDefault;
   letter-spacing: -0.02em;
+  &:hover {
+    background: $color-fontInput;
+    color: $color-white;
+  }
 }
 .succes {
   color: $color-white;
@@ -81,5 +91,10 @@ export default {
   color: $color-fontInput;
   background: #fffefb;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 16px 10px 16px;
+  &:hover {
+    transform: scale(0.95);
+    transition: 1s;
+  }
 }
 </style>

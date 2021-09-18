@@ -1,19 +1,33 @@
 <template>
-  <div :class="$style.card">
-    <img :src="image" :class="$style.imgCard" />
-    <h2 :class="$style.title">Наименование товара</h2>
-    <p :class="$style.descriptions">
-      Довольно-таки интересное описание товара в несколько строк. Довольно-таки
-      интересное описание товара в несколько строк
-    </p>
-    <span :class="$style.price">{{ priceRu }}</span>
-    <ButtonIcon :class="$style.btnDelete" />
+  <div :class="$style.wrapper">
+    <div :class="$style.card">
+      <img :src="image" :class="$style.imgCard" />
+      <h2 :class="$style.title">Наименование товара</h2>
+      <p :class="$style.descriptions">
+        Довольно-таки интересное описание товара в несколько строк.
+        Довольно-таки интересное описание товара в несколько строк
+      </p>
+      <span :class="$style.price">{{ priceRu }}</span>
+    </div>
+    <button :class="$style.btnDelete">
+      <IconBase
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        icon-name="delete"
+        iconColor="none"
+        :class="$style.svgDelete"
+      >
+        <IconDelete />
+      </IconBase>
+    </button>
   </div>
 </template>
 
 <script>
 import image from '../assets/card-foto.png';
-import ButtonIcon from './ButtonIcon';
+import IconDelete from './icons/IconDelete';
+import IconBase from './IconBase';
 export default {
   data: () => ({
     image,
@@ -28,13 +42,17 @@ export default {
     },
   },
   components: {
-    ButtonIcon,
+    IconDelete,
+    IconBase,
   },
 };
 </script>
 
 <style lang="scss" module>
 @import '.././styles/typography';
+.wrapper {
+  position: relative;
+}
 .card {
   position: relative;
   width: 332px;
@@ -75,8 +93,24 @@ export default {
     margin-left: 16px;
     margin-bottom: 24px;
   }
-  .btnDelete {
-    position: absolute;
+}
+.btnDelete {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: $color-buttonDanger;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  top: -8px;
+  right: -8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  .svgDelete {
+    text-align: center;
+  }
+  &:hover {
+    transform: scale(0.97);
   }
 }
 </style>
