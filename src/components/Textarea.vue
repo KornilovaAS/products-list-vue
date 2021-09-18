@@ -1,7 +1,12 @@
 <template>
   <div :class="$style.wrapper">
     <label v-if="label" for="id" :class="$style.label">{{ label }}</label>
-    <textarea :class="$style.textarea" :placeholder="placeholder" :id="id" />
+    <textarea
+      :class="$style.textarea"
+      :placeholder="placeholder"
+      :id="id"
+      :tabindex="1"
+    />
   </div>
 </template>
 
@@ -24,6 +29,8 @@ export default {
 
 <style lang="scss" module>
 @import '.././styles/typography';
+@import '.././styles/mixins';
+
 .wrapper {
   position: relative;
   .label {
@@ -40,13 +47,17 @@ export default {
     border: none;
     border-radius: 4px;
     background: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    @include box-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
     font-family: $font-family;
     font-size: 12px;
     line-height: 15px;
     margin-top: 4px;
     height: 108px;
     resize: none;
+    &:focus {
+      border: 1px solid $color-fontInput;
+      outline: none;
+    }
   }
 }
 </style>

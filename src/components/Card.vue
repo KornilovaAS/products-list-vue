@@ -10,16 +10,7 @@
       <span :class="$style.price">{{ priceRu }}</span>
     </div>
     <button :class="$style.btnDelete">
-      <IconBase
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        icon-name="delete"
-        iconColor="none"
-        :class="$style.svgDelete"
-      >
-        <IconDelete />
-      </IconBase>
+      <IconDelete />
     </button>
   </div>
 </template>
@@ -27,7 +18,6 @@
 <script>
 import image from '../assets/card-foto.png';
 import IconDelete from './icons/IconDelete';
-import IconBase from './IconBase';
 export default {
   data: () => ({
     image,
@@ -43,21 +33,23 @@ export default {
   },
   components: {
     IconDelete,
-    IconBase,
   },
 };
 </script>
 
 <style lang="scss" module>
 @import '.././styles/typography';
+@import '.././styles/mixins';
 .wrapper {
   position: relative;
 }
 .card {
   position: relative;
   width: 332px;
-  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
-    0px 6px 10px rgba(0, 0, 0, 0.02);
+  @include box-shadow(
+    0px 20px 30px rgba(0, 0, 0, 0.04),
+    0px 6px 10px rgba(0, 0, 0, 0.02)
+  );
   border-radius: 4px;
   display: grid;
   grid-template-columns: 1fr;

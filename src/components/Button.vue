@@ -6,25 +6,16 @@
       { [$style.succes]: isSucces },
       { [$style.ghost]: isGhost },
     ]"
+    :tabindex="1"
   >
     {{ title }}
-    <IconBase
-      v-if="isGhost"
-      width="8"
-      height="6"
-      icon-name="arrow"
-      viewBox="0 0 8 6"
-      iconColor="none"
-      :class="$style.svgArrow"
-    >
-      <IconArrow />
-    </IconBase>
+    <IconArrow v-if="isGhost" />
   </button>
 </template>
 
 <script>
 import IconArrow from './icons/IconArrow';
-import IconBase from './IconBase';
+
 export default {
   name: 'Button',
   props: {
@@ -44,13 +35,13 @@ export default {
   data: () => ({}),
   components: {
     IconArrow,
-    IconBase,
   },
 };
 </script>
 
 <style lang="scss" module>
 @import '.././styles/typography';
+@import '.././styles/mixins';
 .btn {
   display: inline-block;
   box-sizing: border-box;
@@ -78,7 +69,7 @@ export default {
   background: $color-buttonDefault;
   letter-spacing: -0.02em;
   &:hover {
-    background: $color-fontInput;
+    background-color: $color-fontInput;
     color: $color-white;
   }
 }
@@ -90,11 +81,11 @@ export default {
 .ghost {
   color: $color-fontInput;
   background: #fffefb;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  @include box-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
   padding: 10px 16px 10px 16px;
   &:hover {
-    transform: scale(0.95);
-    transition: 1s;
+    background-color: white;
+    color: $color-fontInput;
   }
 }
 </style>

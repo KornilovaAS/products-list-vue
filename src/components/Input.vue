@@ -6,6 +6,7 @@
       :type="type"
       :id="id"
       :required="isRequired"
+      :tabindex="1"
     />
     <label v-if="label" :for="id" :class="$style.label">
       {{ label }}
@@ -40,6 +41,7 @@ export default {
 
 <style lang="scss" module>
 @import '.././styles/typography';
+@import '.././styles/mixins';
 input:required + label::after {
   content: '';
   position: absolute;
@@ -59,13 +61,17 @@ input:required + label::after {
     color: $color-fontInput;
     border: none;
     border-radius: 4px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    @include box-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
     font-family: $font-family;
     font-weight: 400;
     font-size: 12px;
     line-height: 15.08px;
     order: 2;
     margin-top: 4px;
+    &:focus {
+      border: 1px solid $color-fontInput;
+      outline: none;
+    }
   }
   .label {
     font-family: $font-family;
