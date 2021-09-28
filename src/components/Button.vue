@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module type="text/scss">
 @import '.././styles/typography';
 @import '.././styles/mixins';
 .btn {
@@ -57,19 +57,17 @@ export default {
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
-  .svgArrow {
-    margin-bottom: 0.5px;
-  }
+
   &:hover {
     transform: scale(0.97);
   }
 }
 .default {
-  color: $color-fontInput;
+  color: rgba(180, 180, 180, 1);
   background: $color-buttonDefault;
   letter-spacing: -0.02em;
   &:hover {
-    background-color: $color-fontInput;
+    background-color: rgba(180, 180, 180, 1);
     color: $color-white;
   }
 }
@@ -79,13 +77,15 @@ export default {
   letter-spacing: 0;
 }
 .ghost {
-  color: $color-fontInput;
+  font-family: $font-family;
+  color: rgba(180, 180, 180, 1);
+  border-radius: 4px;
   background: #fffefb;
   @include box-shadow(0px 2px 5px rgba(0, 0, 0, 0.1));
   padding: 10px 16px 10px 16px;
   &:hover {
-    background-color: white;
-    color: $color-fontInput;
+    background: white;
+    color: rgba(180, 180, 180, 1);
   }
 }
 </style>

@@ -4,7 +4,9 @@
     <div :class="$style.sortButton">
       <Button title="По умолчанию" isGhost />
     </div>
-    <Sidebar :class="$style.sidebar" />
+    <div :class="$style.sidebar">
+      <Sidebar />
+    </div>
     <TopPageComponent :class="$style.topPageComponent" />
   </div>
 </template>
@@ -24,7 +26,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module type="text/scss">
 @import 'styles/typography.scss';
 @import 'styles/global';
 .wrapper {
@@ -33,8 +35,11 @@ export default {
   grid-template-rows: 83px auto;
   min-height: 100vh;
   grid-template-areas: '. title sort .' '. sidebar topPageComponent .';
+  padding: 0 15px 0 15px;
+  margin-bottom: 16px;
   .sidebar {
     grid-area: sidebar;
+    height: auto;
   }
   .topPageComponent {
     grid-area: topPageComponent;
@@ -60,10 +65,6 @@ export default {
   }
   .sortButton {
     margin-top: 16px;
-    padding-right: 16px;
-  }
-  .title {
-    padding-left: 16px;
   }
 }
 </style>

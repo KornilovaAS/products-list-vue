@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module type="text/scss">
 @import '.././styles/typography';
 @import '.././styles/mixins';
 
@@ -54,6 +54,9 @@ export default {
     margin-top: 4px;
     height: 108px;
     resize: none;
+    &::placeholder {
+      color: rgba(180, 180, 180, 1);
+    }
     &:focus {
       border: 1px solid $color-fontInput;
       outline: none;

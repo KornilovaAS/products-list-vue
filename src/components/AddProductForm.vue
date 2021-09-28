@@ -19,12 +19,12 @@
         isRequired
       />
       <Input
-        placeholder="Введите наименование товара"
+        placeholder="Введите цену"
         id="productPrice"
-        label="Введите цену"
+        label="Цена товара"
         isRequired
       />
-      <Button title="Добавить товар" />
+      <Button title="Добавить товар" :class="$style.button" />
     </div>
   </form>
 </template>
@@ -42,12 +42,17 @@ export default {
   },
 };
 </script>
-<style lang="scss" module>
+<style lang="scss" module type="text/scss">
 @import '.././styles/typography';
 .fieldset {
+  position: sticky;
+  top: 1em;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5 auto);
   gap: 16px;
+  .button {
+    margin-top: 8px;
+  }
 }
 </style>

@@ -14,17 +14,21 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module type="text/scss">
 @import '.././styles/typography';
 @import '.././styles/mixins';
+
 .formWrapper {
-  max-height: 440px;
+  position: sticky;
+  top: 24px;
+  width: 100%;
+  max-width: inherit;
+  padding: 24px;
   @include box-shadow(
     0px 20px 30px rgba(0, 0, 0, 0.04),
     0px 6px 10px rgba(0, 0, 0, 0.02)
   );
   border-radius: 4px;
-  padding: 24px;
   background-color: $color-backgroundSecondary;
 }
 </style>

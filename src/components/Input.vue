@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module type="text/scss">
 @import '.././styles/typography';
 @import '.././styles/mixins';
 input:required + label::after {
@@ -68,6 +68,9 @@ input:required + label::after {
     line-height: 15.08px;
     order: 2;
     margin-top: 4px;
+    &::placeholder {
+      color: rgba(180, 180, 180, 1);
+    }
     &:focus {
       border: 1px solid $color-fontInput;
       outline: none;

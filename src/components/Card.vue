@@ -1,13 +1,17 @@
 <template>
   <div :class="$style.wrapper">
     <div :class="$style.card">
-      <img :src="image" :class="$style.imgCard" />
-      <h2 :class="$style.title">Наименование товара</h2>
-      <p :class="$style.descriptions">
-        Довольно-таки интересное описание товара в несколько строк.
-        Довольно-таки интересное описание товара в несколько строк
-      </p>
-      <span :class="$style.price">{{ priceRu }}</span>
+      <div :class="$style.imgCard">
+        <img :src="image" />
+      </div>
+      <div :class="$style.content">
+        <h2 :class="$style.title">Наименование товара</h2>
+        <p :class="$style.descriptions">
+          Довольно-таки интересное описание товара в несколько строк.
+          Довольно-таки интересное описание товара в несколько строк
+        </p>
+        <span :class="$style.price">{{ priceRu }}</span>
+      </div>
     </div>
     <button :class="$style.btnDelete">
       <IconDelete />
@@ -37,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
+<style lang="scss" module type="text/scss">
 @import '.././styles/typography';
 @import '.././styles/mixins';
 .wrapper {
@@ -55,35 +59,40 @@ export default {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4 auto);
   grid-template-areas: 'img' 'title' 'descriptions' 'price';
-  gap: 16px;
   cursor: pointer;
+  margin: auto;
   .imgCard {
     grid-area: img;
+    width: 100%;
+    max-width: 332px;
+    height: 200px;
+    margin: 0 auto;
+    & img {
+      width: 100%;
+      height: auto;
+    }
   }
-  .title {
-    grid-area: title;
-    font-family: $font-family;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 25px;
-    margin-left: 16px;
-  }
-  .descriptions {
-    grid-area: descriptions;
-    font-size: 16px;
-    line-height: 20px;
-    margin-top: 0;
-    margin-bottom: 16px;
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  .price {
-    grid-area: price;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
-    margin-left: 16px;
-    margin-bottom: 24px;
+  .content {
+    padding: 16px 16px 24px 16px;
+    .title {
+      grid-area: title;
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 25px;
+    }
+    .descriptions {
+      grid-area: descriptions;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 16px 0 32px 0;
+    }
+    .price {
+      grid-area: price;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
 }
 .btnDelete {
@@ -91,7 +100,7 @@ export default {
   width: 32px;
   height: 32px;
   background: $color-buttonDanger;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  @include box-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
   border-radius: 10px;
   top: -8px;
   right: -8px;
