@@ -1,8 +1,8 @@
 <template>
-  <div :class="$style.wrapper">
-    <label v-if="label" for="id" :class="$style.label">{{ label }}</label>
+  <div class="wrapper">
+    <label v-if="label" for="id" class="label">{{ label }}</label>
     <textarea
-      :class="$style.textarea"
+      class="textarea"
       :placeholder="placeholder"
       :id="id"
       :tabindex="1"
@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module type="text/scss">
+<style lang="scss" scoped>
 @import '.././styles/typography';
 @import '.././styles/mixins';
 

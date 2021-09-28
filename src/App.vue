@@ -1,13 +1,15 @@
 <template>
-  <div :class="$style.wrapper">
-    <h1 :class="$style.title">Добавление товара</h1>
-    <div :class="$style.sortButton">
+  <div class="wrapper">
+    <h1 class="title">Добавление товара</h1>
+    <div class="sortButton">
       <Button title="По умолчанию" isGhost />
     </div>
-    <div :class="$style.sidebar">
+    <div class="sidebar">
       <Sidebar />
     </div>
-    <TopPageComponent :class="$style.topPageComponent" />
+    <div class="topPageComponent">
+      <TopPageComponent />
+    </div>
   </div>
 </template>
 
@@ -26,9 +28,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module type="text/scss">
-@import 'styles/typography.scss';
-@import 'styles/global';
+<style lang="scss" scoped>
 .wrapper {
   display: grid;
   grid-template-columns: auto 332px minmax(320px, 1044px) auto;

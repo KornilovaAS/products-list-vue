@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.formWrapper">
+  <div class="formWrapper">
     <AddProductForm />
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module type="text/scss">
+<style lang="scss" scoped>
 @import '.././styles/typography';
 @import '.././styles/mixins';
 

@@ -1,14 +1,14 @@
 <template>
-  <div :class="$style.wrapper">
+  <div class="wrapper">
     <input
-      :class="$style.input"
+      class="input"
       :placeholder="placeholder"
       :type="type"
       :id="id"
       :required="isRequired"
       :tabindex="1"
     />
-    <label v-if="label" :for="id" :class="$style.label">
+    <label v-if="label" :for="id" class="label">
       {{ label }}
     </label>
   </div>
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module type="text/scss">
+<style lang="scss" scoped>
 @import '.././styles/typography';
 @import '.././styles/mixins';
 input:required + label::after {

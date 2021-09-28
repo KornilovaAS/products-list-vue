@@ -1,10 +1,10 @@
 <template>
   <button
     :class="[
-      $style.btn,
-      $style.default,
-      { [$style.succes]: isSucces },
-      { [$style.ghost]: isGhost },
+      'btn',
+      'default',
+      { ['succes']: isSucces },
+      { ['ghost']: isGhost },
     ]"
     :tabindex="1"
   >
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module type="text/scss">
+<style lang="scss" scoped>
 @import '.././styles/typography';
 @import '.././styles/mixins';
 .btn {

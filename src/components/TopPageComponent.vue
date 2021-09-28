@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.wrapper">
+  <div class="cardContainer">
     <Card />
     <Card />
     <Card />
@@ -23,11 +23,11 @@ export default {
 };
 </script>
 
-<style lang="scss" module>
-.wrapper {
+<style lang="scss" scoped>
+.cardContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 16px;
+  gap: 16px;
   margin-left: 16px;
 }
 </style>

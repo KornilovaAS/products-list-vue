@@ -1,6 +1,6 @@
 <template>
   <form>
-    <div :class="$style.fieldset">
+    <div class="fieldset">
       <Input
         placeholder="Введите наименование товара"
         id="productName"
@@ -24,7 +24,7 @@
         label="Цена товара"
         isRequired
       />
-      <Button title="Добавить товар" :class="$style.button" />
+      <Button title="Добавить товар" class="button" />
     </div>
   </form>
 </template>
@@ -42,11 +42,9 @@ export default {
   },
 };
 </script>
-<style lang="scss" module type="text/scss">
+<style lang="scss" scoped>
 @import '.././styles/typography';
 .fieldset {
-  position: sticky;
-  top: 1em;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5 auto);

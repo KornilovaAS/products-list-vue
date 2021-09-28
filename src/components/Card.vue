@@ -1,19 +1,19 @@
 <template>
-  <div :class="$style.wrapper">
-    <div :class="$style.card">
-      <div :class="$style.imgCard">
+  <div class="wrapper">
+    <div class="card">
+      <div class="imgCard">
         <img :src="image" />
       </div>
-      <div :class="$style.content">
-        <h2 :class="$style.title">Наименование товара</h2>
-        <p :class="$style.descriptions">
+      <div class="content">
+        <h2 class="title">Наименование товара</h2>
+        <p class="descriptions">
           Довольно-таки интересное описание товара в несколько строк.
           Довольно-таки интересное описание товара в несколько строк
         </p>
-        <span :class="$style.price">{{ priceRu }}</span>
+        <span class="price">{{ priceRu }}</span>
       </div>
     </div>
-    <button :class="$style.btnDelete">
+    <button class="btnDelete">
       <IconDelete />
     </button>
   </div>
@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="scss" module type="text/scss">
+<style lang="scss" scoped>
 @import '.././styles/typography';
 @import '.././styles/mixins';
 .wrapper {
